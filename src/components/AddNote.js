@@ -17,12 +17,15 @@ const AddNote = (props) => {
     e.preventDefault();
 
     const info = {
-      key: Math.random(),
+      id: Math.random(),
       title: enteredTitle,
       content: enteredContent,
     };
 
     props.liftInfo(info);
+
+    setEnteredTitle("");
+    setEnteredContent("");
   };
 
   return (

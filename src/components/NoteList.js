@@ -3,6 +3,10 @@ import Note from "./Note";
 import "./NoteList.css";
 
 const NoteList = (props) => {
+  const getID = (id) => {
+    props.liftID(id);
+  };
+
   return (
     <ul>
       {props.items.map((item) => {
@@ -11,7 +15,9 @@ const NoteList = (props) => {
             className="expand"
             title={item.title}
             content={item.content}
-            key={item.key}
+            id={item.id}
+            liftID={getID}
+            key={item.id}
           />
         );
       })}
